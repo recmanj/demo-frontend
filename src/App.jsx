@@ -4,7 +4,7 @@ function App() {
   const [greeting, setGreeting] = useState('Loading...');
 
   useEffect(() => {
-    const backendUrl = window._env_?.BACKEND_URL || 'http://localhost:8000';
+    const backendUrl = window._env_?.BACKEND_URL ?? '';
     fetch(`${backendUrl}/api/greeting`)
       .then((res) => res.json())
       .then((data) => setGreeting(data.message))
