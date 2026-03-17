@@ -15,6 +15,9 @@ function App() {
     <div className="app">
       <h1>Demo App</h1>
       <p>{greeting}</p>
+      <footer style={{ marginTop: '2rem', fontSize: '0.8rem', color: '#888' }}>
+        v1.1.0 — Powered by Flux CD
+      </footer>
     </div>
   );
 }
