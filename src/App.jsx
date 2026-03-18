@@ -48,7 +48,7 @@ function App() {
   return (
     <div className="app">
       <header>
-        <h1>Notes</h1>
+        <h1>Notes <span className="badge">Preview</span></h1>
         {editing === null && (
           <button className="btn-primary" onClick={handleCreate}>+ New Note</button>
         )}
