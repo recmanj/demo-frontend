@@ -17,4 +17,5 @@ export const api = {
   updateNote: (id, data) => request(`/api/notes/${id}`, { method: 'PUT', body: JSON.stringify(data) }),
   deleteNote: (id) => request(`/api/notes/${id}`, { method: 'DELETE' }),
   seed: () => request('/api/seed', { method: 'POST' }),
+  getVersion: () => request('/api/version'),
 };

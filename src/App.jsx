@@ -3,10 +3,19 @@ import { api } from './api';
 import NoteList from './NoteList';
 import NoteEditor from './NoteEditor';
 
+const FRONTEND_VERSION = process.env.REACT_APP_VERSION || require('../package.json').version;
+
 function App() {
   const [notes, setNotes] = useState([]);
   const [editing, setEditing] = useState(null); // null = list view, object = editing, 'new' = creating
   const [error, setError] = useState(null);
+  const [backendVersion, setBackendVersion] = useState(null);
+
+  useEffect(() => {
+    api.getVersion()
+      .then((data) => setBackendVersion(data.version))
+      .catch(() => {});
+  }, []);
 
   const loadNotes = () => {
     api.listNotes()
@@ -65,6 +74,11 @@ function App() {
       ) : (
         <NoteList notes={notes} onSelect={handleSelect} onDelete={handleDelete} />
       )}
+
+      <footer className="app-footer">
+        frontend v{FRONTEND_VERSION}
+        {backendVersion && <> · backend v{backendVersion}</>}
+      </footer>
     </div>
   );
 }

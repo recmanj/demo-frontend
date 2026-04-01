@@ -181,3 +181,11 @@ header h1 {
   justify-content: flex-end;
   gap: 0.5rem;
 }
+
+/* Footer */
+.app-footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
