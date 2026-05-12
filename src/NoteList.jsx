@@ -2,7 +2,7 @@ import React from 'react';
 
 function NoteList({ notes, onSelect, onDelete }) {
   if (notes.length === 0) {
-    return <p className="empty">No notes yet. Create one!</p>;
+    return <p className="empty">No notes yet. Go and create one!</p>;
   }
 
   return (
